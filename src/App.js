@@ -9,6 +9,7 @@ const App = () => {
   const [data, setData] = useState()
   const [cartIsOpen, setCartIsOpen] = useState(false)
   const [cart, setCart] = useState([])
+  const [favorite, setFavorite] = useState([])
   const [totalPrice, setTotalPrice] = useState(0)
 
   useEffect(() => {
@@ -37,6 +38,14 @@ const App = () => {
     setCart((prev) => [...prev.filter((e) => e.id !== id)])
   }
 
+  const onFavorite = (obj) => {
+    if (!favorite.find((e) => e.id === obj.id)) {
+      setFavorite((prev) => [...prev, obj])
+    } else {
+      setFavorite((prev) => [...prev.filter((e) => e.id !== obj.id)])
+    }
+  }
+
   useEffect(() => {
     setTotalPrice(() => {
       return cart.reduce((acc, item) => (acc += item.price), 0)
@@ -53,6 +62,8 @@ const App = () => {
         data,
         totalPrice,
         setTotalPrice,
+        onFavorite,
+        favorite,
       }}
     >
       <Header />

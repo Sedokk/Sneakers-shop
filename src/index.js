@@ -3,7 +3,8 @@ import ReactDOM from "react-dom/client"
 import "./index.scss"
 import App from "./App"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
-import SneakersLayout from "./components/sneakersLayout/SneakersLayout"
+import SneakersLayout from "./components/SneakersLayout/SneakersLayout"
+import FavoriteLayout from "./components/FavoriteLayout/FavoriteLayout"
 
 const router = createBrowserRouter([
   {
@@ -17,7 +18,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/favorite",
-        element: <h1>Liked one</h1>,
+        element: <FavoriteLayout />,
       },
     ],
   },

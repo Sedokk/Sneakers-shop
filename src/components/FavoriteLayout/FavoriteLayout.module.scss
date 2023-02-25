@@ -1,0 +1,27 @@
+.section {
+  max-width: 1300px;
+  margin: 0 auto 50px;
+}
+
+.topSection {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin-bottom: 35px;
+  .name {
+    font-weight: 700;
+    font-size: 32px;
+    margin: 0;
+    line-height: 46px;
+  }
+}
+
+.sneakersWrapper {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr;
+  grid-auto-rows: 1fr;
+  justify-items: center;
+  align-items: start;
+  gap: 20px 50px;
+}

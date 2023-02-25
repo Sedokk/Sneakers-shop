@@ -5,22 +5,36 @@ import style from "./SneakersItem.module.scss"
 
 export const SneakersItem = ({ data }) => {
   const { imageUrl, title, price, id } = data
-  const { onAddCart, cart } = useContext(Context)
+  const { onAddCart, cart, onFavorite, favorite } = useContext(Context)
   const [added, setAdded] = useState(false)
+  const [isFavorite, setIsFavorite] = useState(false)
 
   const isInCart = (id) => {
     return cart.some((e) => e.id === id)
+  }
+
+  const isInFavorite = (id) => {
+    return favorite.some((e) => e.id === id)
   }
 
   useEffect(() => {
     setAdded(isInCart(id))
   }, [cart])
 
+  useEffect(() => {
+    setIsFavorite(isInFavorite(id))
+  }, [favorite])
+
   return (
     <div className={style.item}>
       <div className={style.imgContainer}>
         <img src={imageUrl} alt='sneakers' className={style.img} />
-        <div className={style.heartBtn}>
+        <div
+          className={
+            isFavorite ? `${style.heartBtn} ${style.favorite}` : style.heartBtn
+          }
+          onClick={() => onFavorite(data)}
+        >
           <svg
             width='22'
             height='19'
