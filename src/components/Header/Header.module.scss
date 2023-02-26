@@ -55,4 +55,12 @@
   img {
     cursor: pointer;
   }
+
+  .favoriteBtn {
+    height: 20px;
+  }
+
+  .activeLink svg path {
+    fill: #ff8585;
+  }
 }

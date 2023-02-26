@@ -9,7 +9,7 @@ const FavoriteLayout = () => {
   return (
     <section className={style.section}>
       <div className={style.topSection}>
-        <h2 className={style.name}>Все кроссовки</h2>
+        <h2 className={style.name}>Понравившееся</h2>
       </div>
       <div className={style.sneakersWrapper}>
         {!favorite ? (
