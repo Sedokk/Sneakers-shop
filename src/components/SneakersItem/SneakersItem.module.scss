@@ -33,6 +33,11 @@
     }
     .favorite {
       background: #fef0f0;
+      svg {
+        path {
+          fill: #ff8585;
+        }
+      }
     }
   }
 
